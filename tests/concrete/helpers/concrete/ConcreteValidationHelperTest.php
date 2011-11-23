@@ -72,6 +72,7 @@ class ConcreteValidationTest extends PHPUnit_Framework_TestCase {
 		$false[] = '!@#$%^&*()_+-=';
 		
 		foreach($false as $string) {
+			print $string . '<br>';
 			$this->assertFalse($this->object->username($string));
 		}
 		

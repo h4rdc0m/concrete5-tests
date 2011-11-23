@@ -31,12 +31,12 @@ class FormHelperTest extends PHPUnit_Framework_TestCase {
 
 	public function testSubmit() {
 		$html = $this->object->submit('element', 'value', array('class' => 'test-class-1', 'arbitrary' => 'arbitrary'), 'test-class-2');
-		$this->assertAttributes($html, array('class' => array('test-class-1', 'test-class-2', 'ccm-input-submit'), 'value' => 'value'));
+		$this->assertAttributes($html, array('class' => array('btn', 'test-class-1', 'test-class-2', 'ccm-input-submit'), 'value' => 'value'));
 	}
 
 	public function testButton() {
 		$html = $this->object->button('element', 'value', array('class' => 'test-class-1', 'arbitrary' => 'arbitrary'), 'test-class-2');
-		$this->assertAttributes($html, array('class' => array('test-class-1', 'test-class-2', 'ccm-input-button'), 'value' => 'value'));
+		$this->assertAttributes($html, array('class' => array('btn', 'test-class-1', 'test-class-2', 'ccm-input-button'), 'value' => 'value'));
 	}
 
 	public function testCheckbox() {
