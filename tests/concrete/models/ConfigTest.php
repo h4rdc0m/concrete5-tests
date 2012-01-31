@@ -135,7 +135,7 @@ class ConfigTest extends PHPUnit_Framework_TestCase {
 	
 	public function testGetAndDefineNotFound()
 	{
-		$configvalue = new ConfigValue();
+		$configvalue = null;//new ConfigValue();
 		$store = $this->getStoreMock();
 		$store->expects($this->once())->
 			method('get')->
@@ -143,7 +143,9 @@ class ConfigTest extends PHPUnit_Framework_TestCase {
 			will($this->returnValue($configvalue));
 		
 		Config::setStore($store);
+
 		Config::getAndDefine('testGetAndDefineNotFound', 'honden');
+
 		$this->assertTrue(defined('testGetAndDefineNotFound'));
 		$this->assertEquals(testGetAndDefineNotFound, 'honden');
 	}
