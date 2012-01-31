@@ -30,23 +30,20 @@ class EventsTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @todo Implement testEnableEvents().
+	 * Test to see if enable events defines the correct constant
 	 */
 	public function testEnableEvents() {
-		// Remove the following lines when you implement this test.
-		$this->markTestIncomplete(
-				'This test has not been implemented yet.'
-		);
+		Events::enableEvents();
+		$this->assertTrue(defined('ENABLE_APPLICATION_EVENTS'));
+		$this->assertTrue(ENABLE_APPLICATION_EVENTS);
 	}
 
 	/**
-	 * @todo Implement testGetInstance().
+	 * Test to see if getInstance returns a Events class instance
 	 */
 	public function testGetInstance() {
-		// Remove the following lines when you implement this test.
-		$this->markTestIncomplete(
-				'This test has not been implemented yet.'
-		);
+		$events = Events::getInstance();
+		$this->assertInstanceOf('Events', $events);
 	}
 
 	/**
